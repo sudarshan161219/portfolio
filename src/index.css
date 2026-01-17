@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar (Webkit browsers like Chrome/Safari/Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a; /* Matches tailwind zinc-800 */
+  border-radius: 9999px; /* Pill shape */
+  border: 2px solid #000000; /* Creates a "padding" effect around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46; /* Lightens on hover (zinc-700) */
+}
+
+/* Firefox Support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a #000000;
+}
