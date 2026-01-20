@@ -34,6 +34,11 @@ const services = [
   },
 ];
 
+const BRAND_COLORS = {
+  upwork: "bg-[#14a800] hover:bg-[#14a800]/90", // Upwork Green
+  fiverr: "bg-[#1dbf73] hover:bg-[#1dbf73]/90", // Fiverr Green
+};
+
 const projects = [
   {
     name: "Retain | Client Portal",
@@ -226,24 +231,26 @@ export const App = () => {
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-4">
-          {/* Option A: The "Safe" Route (Upwork) */}
+          {/* Option A: Upwork */}
           <a
             href="https://www.upwork.com/freelancers/~01e5b163c79e61259b?mp_source=share"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-[#14a800] hover:bg-[#14a800]/90 text-white rounded-lg font-bold transition"
+            className={`flex items-center justify-center gap-3 px-8 py-4 text-white rounded-lg font-bold transition shadow-lg hover:shadow-xl ${BRAND_COLORS.upwork}`}
           >
             <ExternalLink size={18} />
             Hire on Upwork
           </a>
 
-          {/* Option B: The "Direct" Route (Email) */}
+          {/* Option B: Fiverr */}
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg font-bold transition"
+            href="https://www.fiverr.com/sudarshan100m"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center justify-center gap-3 px-8 py-4 text-white rounded-lg font-bold transition shadow-lg hover:shadow-xl ${BRAND_COLORS.fiverr}`}
           >
-            <Mail size={18} />
-            Email Direct
+            <ExternalLink size={18} />
+            Hire on Fiverr
           </a>
         </div>
 
