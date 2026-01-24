@@ -1,0 +1,105 @@
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #737373;
+}
+
+.projectList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.projectCard {
+  display: block; /* Important for <a> tags */
+  text-decoration: none; /* Remove default underline */
+  border: 1px solid #262626;
+  background-color: #0a0a0a;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.projectCard:hover {
+  border-color: #525252;
+  transform: translateY(-2px);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.projectName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.projectCard:hover .projectName {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.projectTag {
+  font-size: 0.75rem;
+  color: #737373;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.techBadgeContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.techBadge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  border: 1px solid #262626;
+  background-color: #171717;
+  color: #a3a3a3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.featured {
+  border-color: #fff; /* White border implies 'Active' or 'Important' */
+  background-color: #000; /* Darker background */
+  box-shadow: 0 4px 20px -5px rgba(255, 255, 255, 0.15); /* Subtle glow */
+}
+
+.featured:hover {
+  border-color: #fff;
+  box-shadow: 0 4px 25px -5px rgba(255, 255, 255, 0.25);
+}
+
+/* Helper for the ExternalLink icon color transition */
+.linkIcon {
+  color: #525252;
+  transition: color 0.2s;
+}
+
+.projectCard:hover .linkIcon {
+  color: #fff;
+}
+
+/* Helper for description spacing/color */
+.projectDesc {
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}

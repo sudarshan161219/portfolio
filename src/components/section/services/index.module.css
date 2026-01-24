@@ -1,0 +1,44 @@
+/* .section {
+  margin-bottom: 5rem;
+} */
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #737373;
+}
+
+/* --- Service Cards --- */
+.serviceList {
+  display: grid;
+  gap: 1rem;
+}
+
+.serviceCard {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #171717;
+  background-color: rgba(10, 10, 10, 0.5);
+  transition: border-color 0.2s;
+}
+
+.serviceCard:hover {
+  border-color: #404040;
+}
+
+.serviceIcon {
+  color: #a3a3a3;
+  margin-top: 0.25rem;
+}

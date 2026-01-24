@@ -19,8 +19,8 @@
   background: #3f3f46; /* Lightens on hover (zinc-700) */
 }
 
-/* Firefox Support */
 html {
   scrollbar-width: thin;
   scrollbar-color: #27272a #000000;
+  scroll-behavior: smooth;
 }

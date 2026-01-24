@@ -1,0 +1,202 @@
+/* --- Base Header Styles --- */
+.header {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a;
+  background-color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  z-index: 50;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* --- Desktop Navigation --- */
+.nav {
+  display: none; /* Hidden by default (mobile first approach) */
+  gap: 1.5rem;
+}
+
+/* Show desktop nav only on larger screens */
+@media (min-width: 768px) {
+  .nav.desktopOnly {
+    display: flex;
+  }
+  
+  .mobileToggle {
+    display: none;
+  }
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #a3a3a3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.link:hover, .active {
+  color: #fff;
+}
+
+.active::before {
+  content: '>';
+  position: absolute;
+  left: -12px;
+  color: #22c55e;
+}
+
+/* --- Mobile Toggle Button --- */
+.mobileToggle {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobileToggle:hover {
+  background: #111;
+  border-color: #555;
+}
+
+/* --- Terminal Modal Overlay --- */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* --- Terminal Window Styling --- */
+.terminalWindow {
+  width: 100%;
+  max-width: 400px;
+  background-color: #0a0a0a;
+  border: 1px solid #333;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.terminalHeader {
+  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.terminalTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a3a3a3;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #ef4444; /* Red color for close */
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.closeBtn:hover {
+  color: #fff;
+}
+
+.terminalBody {
+  padding: 1.5rem;
+}
+
+.terminalText {
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.terminalNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.terminalLink {
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  transition: all 0.2s;
+}
+
+.terminalLink:hover .cmdText {
+  color: #22c55e; /* Green hover */
+  text-decoration: underline;
+}
+
+.cmdIndex {
+  color: #525252;
+}
+
+.cmdPrompt {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.cursorBlock {
+  display: flex;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.blinkingCursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
