@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400&display=swap");
+
+main {
+  /* background-image: url("./assets/hara.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.sanskritBackground {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 14vw;
+  white-space: nowrap;
+
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-muted);
+  opacity: 0.3;
+
+  font-family: "Noto Serif Devanagari", serif;
+}
+
+/* The Grid Layer */
+.gridBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+
+  /* Creates the grid pattern using your theme's subtle borders */
+  background-color: var(--bg-app);
+  background-image:
+    linear-gradient(var(--border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+  background-size: 60px 60px; /* Size of the grid squares */
+  background-position: center center;
+
+  /* Fades the grid out at the edges for an ethereal, soft look */
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    black 30%,
+    transparent 80%
+  );
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+}
+
+/* The Sanskrit Text Layer */
+.sanskritText {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+
+  /* Typography */
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: 13vw;
+
+  /* The hollow outline effect using your medium border variable */
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border-medium);
+  opacity: 0.2; /* Keeps it subtle behind your project cards */
+}

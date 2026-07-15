@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400&display=swap");
+
+.sanskritGridContainer {
+  /* Fix it to the background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+
+  /* Form the grid structure */
+  display: grid;
+  /* Auto-fill creates as many columns as will fit based on min-width */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-content: center;
+  justify-items: center;
+  gap: 3rem; /* Spacing between the text blocks */
+
+  /* Fade out beautifully at the edges to create a halo effect */
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    black 30%,
+    transparent 85%
+  );
+  mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+}
+
+.sanskritGridItem {
+  font-family: "Noto Serif Devanagari", serif;
+  white-space: nowrap;
+
+  /* Fallback empty variables */
+  --audio-vol: 0;
+  --base-opacity: 0.1;
+
+  /* React to the music: Increase opacity and scale up slightly on the beat */
+  opacity: calc(var(--base-opacity) + (var(--audio-vol) * 0.4));
+  transform: scale(calc(1 + (var(--audio-vol) * 0.15)));
+
+  /* 
+    The Glitch Effect: 
+    Creates a red/blue stereoscopic split that only separates when the music hits 
+  */
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-muted);
+  text-shadow:
+    calc(var(--audio-vol) * 8px) 0 0 rgba(139, 92, 246, 0.4),
+    /* Uses your accent-main */ calc(var(--audio-vol) * -8px) 0 0
+      rgba(156, 163, 175, 0.4); /* Uses your text-muted */
+
+  /* Keep the slow vertical breathing, but the audio overrides the scale/shadows */
+  animation: divineBreath 6s infinite alternate ease-in-out;
+
+  /* Extremely fast transition makes it look twitchy/glitchy rather than smooth */
+  transition:
+    transform 0.05s ease-out,
+    opacity 0.05s ease-out,
+    text-shadow 0.05s ease-out;
+}
+
+@keyframes divineBreath {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}

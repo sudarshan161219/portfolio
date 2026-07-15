@@ -45,7 +45,7 @@ export const Footer = () => {
           >
             {copied ? "copied!" : "discord"}
           </button>
-          <a href="mailto:invii@invii.online" className={styles.link}>
+          <a href="mailto:hosalli90956@gmail.com" className={styles.link}>
             email
           </a>
         </div>

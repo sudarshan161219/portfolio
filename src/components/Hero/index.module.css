@@ -12,7 +12,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   margin-bottom: 2rem;
@@ -127,4 +127,3 @@
     padding: 1rem 1.25rem 3rem;
   }
 }
-
