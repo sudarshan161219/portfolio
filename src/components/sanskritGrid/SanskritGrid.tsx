@@ -25,7 +25,7 @@ export const SanskritGrid = ({
       const items = Array.from({ length: 40 }).map((_, i) => ({
         id: i,
         fontSize: `${Math.random() * 2.5 + 1}rem`,
-        baseOpacity: Math.random() * 0.2 + 0.1,
+        baseOpacity: Math.random() * 0.1 + 0.1,
         animationDelay: `${Math.random() * 5}s`,
       }));
 

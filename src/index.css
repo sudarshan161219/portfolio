@@ -70,3 +70,7 @@ a {
   background: var(--accent-dim);
   color: var(--accent);
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
