@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export const useAudioVisualizer = (
-  audioRef: React.RefObject<HTMLAudioElement>,
+  audioRef: React.RefObject<HTMLAudioElement | null>,
 ) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
