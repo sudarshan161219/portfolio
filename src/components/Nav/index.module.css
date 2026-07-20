@@ -39,6 +39,22 @@
   animation-play-state: running;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .img {
   width: 100%;
+}
+
+.ctrlBtn {
+  border: none;
+  cursor: pointer;
+  color: gray;
+}
+
+.ctrlBtn:hover {
+  color: black;
 }
