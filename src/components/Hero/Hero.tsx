@@ -1,11 +1,42 @@
+import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 
-export const Hero = () => {
+interface HeroProps {
+  isPlaying: boolean;
+  author: string;
+  title: string;
+}
+
+export const Hero = ({ isPlaying, author, title }: HeroProps) => {
+  const [showSongInfo, setShowSongInfo] = useState(false);
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+
+    if (isPlaying) {
+      // Toggle the text every 3 seconds
+      interval = setInterval(() => {
+        setShowSongInfo((prev) => !prev);
+      }, 2000);
+    } else {
+      // Reset to default name if music is paused
+      setShowSongInfo(false);
+    }
+
+    // Cleanup the interval on unmount or when isPlaying changes
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  const eyebrowText =
+    isPlaying && showSongInfo ? `${title} - ${author}` : "buildwithsud";
+
   return (
     <section className={styles.hero}>
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.inner}>
-        <span className={styles.eyebrow}>buildwithsud</span>
+        <span key={eyebrowText} className={styles.eyebrow}>
+          {eyebrowText}
+        </span>
         <h1 className={styles.heading}>
           Full-stack developer.
           <br />
@@ -19,7 +50,7 @@ export const Hero = () => {
           <a href="#projects" className={styles.btnPrimary}>
             View projects
           </a>
-          <a href="mailto:invii@invii.online" className={styles.btnGhost}>
+          <a href="mailto:hosalli90956@gmail.com" className={styles.btnGhost}>
             Get in touch
           </a>
         </div>

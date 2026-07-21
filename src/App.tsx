@@ -9,10 +9,30 @@ import { SanskritGrid } from "./components/sanskritGrid/SanskritGrid";
 const pub = "https://pub-325cad6835d84055b03bbf6cfa6642fa.r2.dev";
 
 const TRACKS = [
-  `${pub}/BIA-WE-ON-GO.mp3`,
-  `${pub}/Devadevam -देवदेवं.mp3`,
-  `${pub}/Headlock.webm`,
-  `${pub}/Before I get bored.mp3`,
+  {
+    url: `${pub}/BIA-WE-ON-GO.mp3`,
+    title: "BIA WE ON GO",
+    author: "BIA",
+    bgColor: "#0d1117", // Subtle dark slate/blue
+  },
+  {
+    url: `${pub}/Devadevam -देवदेवं.mp3`,
+    title: "Devadevam - देवदेवं",
+    author: "Rotting Christ",
+    bgColor: "#141010", // Subtle dark warm/crimson
+  },
+  {
+    url: `${pub}/Headlock.webm`,
+    title: "Headlock",
+    author: "Imogen Heap",
+    bgColor: "#101412", // Subtle dark teal/green
+  },
+  {
+    url: `${pub}/Before I get bored.mp3`,
+    title: "Before I Get Bored",
+    author: "YOUTHISENDING",
+    bgColor: "#111111", // Near pure dark gray
+  },
 ];
 
 function App() {
@@ -39,7 +59,6 @@ function App() {
 
   const nextTrack = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % TRACKS.length);
-    console.log(currentTrackIndex);
 
     if (isPlaying && audioRef.current) {
       setTimeout(() => audioRef.current?.play(), 50);
@@ -53,14 +72,17 @@ function App() {
     }
   };
 
+  const currentTrack = TRACKS[currentTrackIndex];
+
   return (
     <main>
       <audio
         ref={audioRef}
-        src={TRACKS[currentTrackIndex]}
+        src={currentTrack.url}
         crossOrigin="anonymous"
         onEnded={handleTrackEnd}
       />
+
       <SanskritGrid audioRef={audioRef} />
       <Nav
         isPlaying={isPlaying}
@@ -68,7 +90,11 @@ function App() {
         nextTrack={nextTrack}
         PreviousTrack={PreviousTrack}
       />
-      <Hero />
+      <Hero
+        isPlaying={isPlaying}
+        author={currentTrack.author}
+        title={currentTrack.title}
+      />
       <Projects />
       <Footer />
     </main>

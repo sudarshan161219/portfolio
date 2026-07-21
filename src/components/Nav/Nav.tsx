@@ -22,7 +22,11 @@ export const Nav = ({
 
         {/* The clickable container */}
         <div className={styles.container}>
-          <button className={styles.ctrlBtn} onClick={PreviousTrack}>
+          <button
+            className={styles.ctrlBtn}
+            onClick={PreviousTrack}
+            title="Previous"
+          >
             <ChevronLeft size={20} />
           </button>
           <div
@@ -38,7 +42,11 @@ export const Nav = ({
             />
           </div>
 
-          <button className={styles.ctrlBtn} onClick={nextTrack}>
+          <button
+            className={styles.ctrlBtn}
+            onClick={nextTrack}
+            title="Next"
+          >
             <ChevronRight size={20} />
           </button>
         </div>
